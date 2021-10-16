@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+#map {
+    position: relative;
+}
+.menu-wrap {
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+}
+.menu-wrap input[id=menu-btn] {
+    display: none;
+
+}
+
+label[for=menu-btn] {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+label[for=menu-btn] span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transition: 0.3s;
+}
+label[for=menu-btn] span:nth-child(1) {top: 0;}
+label[for=menu-btn] span:nth-child(2) {top: 50%;}
+label[for=menu-btn] span:nth-child(3) {top: 100%;}
+
+.menu-wrap input[id=menu-btn]:checked ~ label[for=menu-btn] span:nth-child(1) {
+    top: 50%;
+    transform: rotate(45deg);
+}
+.menu-wrap input[id=menu-btn]:checked ~ label[for=menu-btn] span:nth-child(2) {
+    opacity: 0;
+}
+.menu-wrap input[id=menu-btn]:checked ~ label[for=menu-btn] span:nth-child(3) {
+    top: 50%;
+    transform: rotate(-45deg);
+}
+.menu-wrap .menu-content {
+    position: absolute;
+    box-sizing: border-box;
+    width: 300px;
+    height: 100%;
+    top: 0;
+    left: -300px;
+    background: #fff;
+    transition: 0.3s;
+    padding: 5px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    text-align: center;
+}
+.menu-wrap input[id=menu-btn]:checked ~ .menu-content {
+    left: 0;
+}
+.menu-wrap input[id=menu-btn]:checked ~ label[for=menu-btn] {
+    left: 310px;
+}
+
+.menu-content .menu-item {
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.menu-content .menu-item .front,
+.menu-content .menu-item .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: rgba(0, 0, 0, 0.65);
+}
+.menu-content .menu-item .back {
+    text-align: center;
+}
