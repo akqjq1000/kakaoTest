@@ -52,10 +52,10 @@ label[for=menu-btn] span:nth-child(3) {top: 100%;}
 .menu-wrap .menu-content {
     position: absolute;
     box-sizing: border-box;
-    width: 300px;
+    width: 400px;
     height: 100%;
     top: 0;
-    left: -300px;
+    left: -400px;
     background: #fff;
     transition: 0.3s;
     padding: 5px;
@@ -67,7 +67,7 @@ label[for=menu-btn] span:nth-child(3) {top: 100%;}
     left: 0;
 }
 .menu-wrap input[id=menu-btn]:checked ~ label[for=menu-btn] {
-    left: 310px;
+    left: 410px;
 }
 
 .menu-content .menu-item {
